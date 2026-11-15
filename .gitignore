@@ -31,3 +31,16 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+*.pem
+*.key
+*.p12
+*.pfx
+
+
+.env
+.env.*
+!.env.example
+application-local.properties
+application-prod.properties
