@@ -43,6 +43,17 @@ public class SecurityConfig {
                                 "/api/auth/login"
                         ).permitAll()
 
+                        .requestMatchers(HttpMethod.POST,
+                                "/api/auth/registro"
+                        ).permitAll()
+
+                        // Swagger / OpenAPI público
+                        .requestMatchers(
+                                "/swagger-ui/**",
+                                "/swagger-ui.html",
+                                "/v3/api-docs/**"
+                        ).permitAll()
+
                         // Rutas administrativas
                         .requestMatchers("/api/admin/**")
                         .hasRole("ADMIN")
@@ -54,6 +65,35 @@ public class SecurityConfig {
                         // Rutas para clientes
                         .requestMatchers("/api/cliente/**")
                         .hasRole("CLIENTE")
+
+                        .requestMatchers(
+                                HttpMethod.GET,
+                                "/api/servicios/**"
+                        ).authenticated()
+
+                        .requestMatchers(
+                                HttpMethod.POST,
+                                "/api/servicios/**"
+                        ).hasAnyRole(
+                                "COLABORADOR",
+                                "ADMIN"
+                        )
+
+                        .requestMatchers(
+                                HttpMethod.PUT,
+                                "/api/servicios/**"
+                        ).hasAnyRole(
+                                "COLABORADOR",
+                                "ADMIN"
+                        )
+
+                        .requestMatchers(
+                                HttpMethod.DELETE,
+                                "/api/servicios/**"
+                        ).hasAnyRole(
+                                "COLABORADOR",
+                                "ADMIN"
+                        )
 
                         // Cualquier otra ruta requiere autenticación
                         .anyRequest().authenticated()
