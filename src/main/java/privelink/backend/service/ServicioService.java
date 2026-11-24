@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Service;
-
+import privelink.backend.exception.RecursoNoEncontradoException;
 import privelink.backend.model.Servicio;
 import privelink.backend.repository.ServicioRepository;
 
@@ -32,12 +32,12 @@ public class ServicioService {
 
         return servicioRepository
                 .findById(id)
-                .orElseThrow(
-                        () -> new IllegalArgumentException(
+        .orElseThrow(
+                        () -> new RecursoNoEncontradoException(
                                 "Servicio no encontrado"
                         )
                 );
-    }
+        }
 
     public List<Servicio> obtenerPorPerfil(
             String perfilId

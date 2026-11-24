@@ -1,7 +1,6 @@
 package privelink.backend.exception;
 
 import java.util.Map;
-import privelink.backend.exception.RecursoNoEncontradoException;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
