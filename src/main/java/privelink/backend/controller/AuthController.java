@@ -2,16 +2,13 @@
 package privelink.backend.controller;
 
 import jakarta.validation.Valid;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.annotation.*;
 
 import privelink.backend.dto.LoginRequest;
 import privelink.backend.dto.LoginResponse;
 import privelink.backend.service.AuthService;
 
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/auth")

@@ -6,8 +6,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.JwtException;
-
-import privelink.backend.config.JwtConfig;
 import privelink.backend.model.EstadoUsuario;
 import privelink.backend.model.RolUsuario;
 import privelink.backend.model.Usuario;

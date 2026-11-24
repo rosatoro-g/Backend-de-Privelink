@@ -22,7 +22,6 @@ import java.security.interfaces.RSAPublicKey;
 
 import org.springframework.security.oauth2.jose.jws.SignatureAlgorithm;
 import org.springframework.security.oauth2.jwt.JwtValidators;
-import org.springframework.security.oauth2.jwt.JwtValidationException;
 import org.springframework.security.oauth2.core.*;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.security.oauth2.core.OAuth2TokenValidator;

@@ -1,10 +1,10 @@
-package privelink.backend.config;
+package privelink.backend.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class ControladorPruebasSeguridad {
+public class PruebaAccesoController {
 
     @GetMapping("/api/admin/prueba-acceso")
     public String admin() {
